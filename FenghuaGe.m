@@ -33,8 +33,8 @@ yyaxis right;
 h2 = plot(t_I,'s-','MarkerSize',5,'MarkerFaceColor',[0.9290 0.6940 0.1250]);
 hold on
 h3 = plot(t_O,'o-','MarkerSize',5,'MarkerFaceColor',[0.9290 0.6940 0.1250])
-axis([0 18 5 36])
-yticks(0:4:36);
+axis([0 18 6 36])
+yticks(8:4:36);
 ylabel('{\itt} [{\circ}C]');
 
 
@@ -48,6 +48,7 @@ ax.YAxis(1).MinorTick = 'off';
 ax.YAxis(2).MinorTick = 'on';
 ax.YAxis(2).MinorTickValues = 2:2:36;
 ax.XAxis.TickDirection = 'out';
+ax.XAxis.TickLength(1) = 0;
 
 lgd1= legend([h1],{'Condensing dehumidification','Desiccant wheel dehumidification','t_I','t_O','\omega_I','\omega_O'}, ... 
     'Location', 'southoutside','Orientation','horizontal','box','off');

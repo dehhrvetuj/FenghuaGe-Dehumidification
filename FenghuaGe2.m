@@ -25,8 +25,9 @@ set(h1, {'DisplayName'}, {'Condensing dehumidification','Desiccant wheel dehumid
 colororder('default')
 xticks(1:1:17);
 xlabel('Case');
-ylabel('Exergy Efficiency [%]');
+ylabel('Exergy Efficiency');
 axis([0 18 0 40]);
+yticklabels({'0','0.05','0.10','0.15','0.20','0.25','0.30','0.35','0.40'})
 
 
 yyaxis right;
@@ -56,12 +57,13 @@ lgd1= legend([h1],{'Condensing dehumidification','Desiccant wheel dehumidificati
 
 hidden_ax = axes('Visible','off','NextPlot','add');
 h2 = plot(t_I,'s-','Color',[0.9290 0.6940 0.1250],'MarkerFaceColor',[0.9290 0.6940 0.1250]);
-h3 = plot(t_I,'o-','Color',[0.9290 0.6940 0.1250],'MarkerSize',4,'MarkerFaceColor',[0.9290 0.6940 0.1250])
+h3 = plot(t_I,'o-','Color',[0.9290 0.6940 0.1250],'MarkerSize',4,'MarkerFaceColor',[0.9290 0.6940 0.1250]);
 h4 = plot(t_I,'s-','Color',[0.4940 0.1840 0.5560],'MarkerFaceColor','w');
 h5 = plot(t_I,'o-','Color',[0.4940 0.1840 0.5560],'MarkerSize',5,'MarkerFaceColor','w');
 
 [lgd2, objs] = legend([h2 h3 h4 h5],{'{\itt}_I','{\itt}_O','\omega_I','\omega_O'}, ... 
     'Location', 'southoutside','Orientation','horizontal','AutoUpdate','off','box','off');
+set(lgd2,'FontName','Times New Roman');
 
 
 delete(h2); delete(h3); delete(h4); delete(h5);
